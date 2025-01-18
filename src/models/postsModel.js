@@ -30,3 +30,12 @@ export async function atualizarPost(id, novoPost) {
 
     return colecao.updateOne({_id: new ObjectId(objID)}, {$set:novoPost});
 }
+
+// Função de deletar um post do banco, pelo id
+export async function deletePost(id){
+    const db = conexao.db('Imerssao-Alura');
+    const colecao = db.collection('posts');
+    const objID = ObjectId.createFromHexString(id)
+    
+    return colecao.deleteOne({_id: new ObjectId(objID)})
+}

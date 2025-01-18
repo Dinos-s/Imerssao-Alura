@@ -1,4 +1,4 @@
-import { getTodosPosts, criarPost, atualizarPost } from "../models/postsModel.js";
+import { getTodosPosts, criarPost, atualizarPost, deletePost } from "../models/postsModel.js";
 import fs from "fs";
 import gerarDescricaoGemini from "../services/geminiService.js";
 
@@ -53,6 +53,19 @@ export async function atualizarNovoPost(req, res) {
 
         const postCriado = await atualizarPost(id, post);
         res.status(200).json(postCriado);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({"Error": "Falha na requisição"})
+    }
+}
+
+export async function deletarPost(req, res){
+    const id = req.params.id;
+
+    try {
+        const delPost = await deletePost(id);
+        fs.unlinkSync(`uploads/${id}.png`);
+        res.status(200).json(delPost);
     } catch (error) {
         console.error(error.message);
         res.status(500).json({"Error": "Falha na requisição"})

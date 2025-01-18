@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import { atualizarNovoPost, listarPosts, postarPosts, uploadImagem } from '../controllers/postsController.js';
+import { atualizarNovoPost, listarPosts, postarPosts, uploadImagem, deletarPost } from '../controllers/postsController.js';
 import cors from "cors";
 
 const corsOptions = {
@@ -38,6 +38,9 @@ const routes = (app) => {
 
     // Rota para atualizar registro
     app.put('/upload/:id', atualizarNovoPost)
+
+    //Rota para deleta uma registro
+    app.delete('/delete/:id', deletarPost)
 }
 
 export default routes;
