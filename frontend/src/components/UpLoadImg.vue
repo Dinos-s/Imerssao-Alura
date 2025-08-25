@@ -76,7 +76,7 @@ export default {
 
       try {
         const formData = new FormData();
-        formData.append('image', this.selectedFile);
+        formData.append('imagem', this.selectedFile);
 
         await axios.post('https://imerssao-alura.onrender.com/upload', formData, { // substitua pela a url local para testar os upload http://localhost:3000/upload
           headers: {

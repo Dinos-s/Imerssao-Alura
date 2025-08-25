@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     refreshImages() {
-      this.$refs.imageList.fetchImages(); // Recarrega o componente com um novo upload;
+      this.$refs.imageList.loadImages(); // Recarrega o componente com um novo upload;
     }
   }
 }

@@ -97,7 +97,8 @@ export default {
     },
     async atualizarImage(id, alt) {
       try {
-        await axios.put(`https://imerssao-alura.onrender.com/upload/${id}`, alt); // substitua pela a url local para realizar o update de imagens http://localhost:3000/upload/:id
+        await axios.put(`https://imerssao-alura.onrender.com/upload/${id}`, {alt}); // substitua pela a url local para realizar o update de imagens http://localhost:3000/upload/:id
+        
         this.loadImages(); // Recarrega a lista após a atualização
       } catch (error) {
         console.error('Erro ao atualizar imagem:', error);
