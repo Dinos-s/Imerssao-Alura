@@ -3,7 +3,7 @@
         <h2>Imagens Enviadas</h2>
         <div class="gallery">
             <div v-for="(img, index) in images" :key="index" class="image-card">
-                <img :src="img.imgUrl" :alt="img.alt" style="max-width: 150px; margin: 10px;"/>
+                <img :src="img.imgUrl" :alt="img.alt"/>
                 <p class="desc">{{img.descricao}}</p>
 
                 <div class="actions">
@@ -26,15 +26,29 @@
 
   .image-card {
     border: 1px solid #ffffff;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 10px;
     background: rgba(238, 237, 237, 0.459);
-    color: #000;
+    color: #f7f4f4;
     text-align: center;
   }
 
+  .image-card img {
+    max-width: 150px; 
+    margin: 10px;
+    border-radius: 6px;
+  }
+
+  .desc {
+    font-size: 14px;
+    margin: 10px 0;
+    max-height: 100px;
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+
   .actions {
-    margin-top: 10px;
+    margin-top: auto;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -51,6 +65,7 @@
   .delete {
     background: #f00a0a;
     color: white;
+    transition: .4s;
   }
 
   .delete:hover {
@@ -60,11 +75,13 @@
   .update {
     background: #3498db;
     color: white;
+    transition: .4s;
   }
 
   .update:hover {
-    background: #2980b9;
+    background: #035d99;
   }
+  
 </style>
 
 <script>

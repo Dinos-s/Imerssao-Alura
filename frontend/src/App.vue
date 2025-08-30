@@ -24,8 +24,8 @@ export default {
 </template>
 
 <style scoped>
-.container {
-  margin: auto;
-  padding: 20px;
-}
+  .container {
+    margin: auto;
+    padding: 20px;
+  }
 </style>

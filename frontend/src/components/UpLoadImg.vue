@@ -9,7 +9,7 @@
 
     <div v-if="imageUrl" class="preview">
       <h2>Prévia da Imagem:</h2>
-      <img :src="imageUrl" alt="Uploaded Image" style="max-width: 300px;"/>
+      <img :src="imageUrl" alt="Uploaded Image"/>
     </div>
 
     <div v-if="uploadMsg" class="message">
@@ -19,34 +19,34 @@
 </template>
 
 <style scoped>
-.upload-container {
-  margin-bottom: 20px;
-}
+  .upload-container {
+    margin-bottom: 20px;
+  }
 
-button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  background: #27ae60;
-  color: white;
-  cursor: pointer;
-}
+  button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background: #27ae60;
+    color: white;
+    cursor: pointer;
+  }
 
-button:hover {
-  background: #1e8449;
-}
+  button:hover {
+    background: #1e8449;
+  }
 
-.preview img {
-  max-width: 100%;
-  border-radius: 6px;
-  margin-top: 8px;
-}
+  .preview img {
+    max-width: 20%;
+    border-radius: 6px;
+    margin-top: 8px;
+  }
 
-.message {
-  margin-top: 10px;
-  font-weight: bold;
-}
+  .message {
+    margin-top: 10px;
+    font-weight: bold;
+  }
 </style>
 
 <script>
